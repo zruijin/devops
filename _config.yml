@@ -4,7 +4,7 @@ header-img: "img/green.jpg"
 tagline: "cn"  
 description: "这是我的博客"  # 一句话描述你的博客
 baseurl: ""
-url: "http://cnfeat"  # 此处填写你的博客地址 
+url: "https://zruijin.github.io/devops/"  # 此处填写你的博客地址 
 
 # About/contact
 owner: 
