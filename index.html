@@ -5,7 +5,7 @@ description: "devops"
 
 {% for post in paginator.posts %}
 <div class="post-preview">
-    <a href="{{site.baseurl}}devops{{ post.url }}">
+    <a href="https://zruijin.github.io/devops{{ post.url }}">
         <h2 class="post-title">            
             {{ post.title }}
         </h2>
@@ -25,7 +25,7 @@ description: "devops"
 {% endfor %}
 
 <!-- Pager -->
-{% if paginator.total_pages > 1 %}
+<!-- {% if paginator.total_pages > 1 %}
 <ul class="pager">
     {% if paginator.previous_page %}
     <li class="previous">
@@ -38,4 +38,4 @@ description: "devops"
     </li>
     {% endif %}
 </ul>
-{% endif %}
+{% endif %} -->
