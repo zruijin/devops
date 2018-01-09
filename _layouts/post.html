@@ -88,7 +88,7 @@ layout: default
                 </div> -->
                 <!-- Duoshuo Share end-->
 
-
+                <div id="container"></div>
                 <!-- 多说评论框 start -->
                 <!-- <div class="comment">
                     <div class="ds-thread" data-thread-key="{{page.id}}" data-title="{{page.title}}" data-url="{{site.url}}{{page.url}}"></div>
@@ -99,10 +99,23 @@ layout: default
     </div>
 </article>
 
-
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: 'location.href', // 可选。默认为 location.href
+      owner: '344310362',
+      repo: 'https://github.com/zruijin/blog.comment.git',
+      oauth: {
+        client_id: '3bf1890bf53c52759c49',
+        client_secret: '34f877564dbd46c105cce9aacf8a5c05c61ace04',
+      },
+    })
+    gitment.render('container')
+</script>
 
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 var duoshuoQuery = {short_name:"cnfeat"};
     (function() {
         var ds = document.createElement('script');
@@ -112,11 +125,11 @@ var duoshuoQuery = {short_name:"cnfeat"};
         (document.getElementsByTagName('head')[0]
          || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
-</script>
+</script> -->
 <!-- 多说公共JS代码 end -->
 
 <!-- async load function -->
-<script>
+<!-- <script>
     function async(u, c) {
       var d = document, t = 'script',
           o = d.createElement(t),
@@ -125,10 +138,10 @@ var duoshuoQuery = {short_name:"cnfeat"};
       if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
       s.parentNode.insertBefore(o, s);
     }
-</script>
+</script> -->
 
 <!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<script>
+<!-- <script>
     async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
         anchors.options = {
           visible: 'always',
@@ -137,7 +150,7 @@ var duoshuoQuery = {short_name:"cnfeat"};
         };
         anchors.add().remove('.intro-header h1').remove('.subheading');
     })
-</script>
+</script> -->
 <style>
     /* place left on bigger screen */
     @media all and (min-width: 800px) {
