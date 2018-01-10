@@ -47,7 +47,7 @@ layout: default
 
 <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
+<!--<script>
     var gitment = new Gitment({
       id: 'location.href', // 可选。默认为 location.href
       owner: '344310362',
@@ -58,6 +58,19 @@ layout: default
       },
     })
     gitment.render('container')
+</script>-->
+
+<script> 
+var gitment = new Gitment({ 
+    id: 'location.href', // 可选。默认为 location.href 
+    owner: 'zruijin', 
+    repo: 'blog.comment', 
+    oauth: { 
+        client_id: '6ed06cc1bd5dde6da5aa', 
+        client_secret: 'cac3f45bc705aa76b60d02d9deedf02478a3a45e'
+        }, 
+    }) 
+    gitment.render('container') 
 </script>
 
 <style>
