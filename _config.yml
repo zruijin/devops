@@ -10,7 +10,7 @@ url: "https://zruijin.github.io/devops/"  # 此处填写你的博客地址
 owner: 
   name: "zhourj" # 填写作者信息：名字
   email: 344310362@qq.com # 填写作者信息：邮箱
-  bio: "你的博客描述" # 填写作者信息：博客描述
+  bio: "英俊潇洒，风流倜傥" # 填写作者信息：博客描述
 
 # Data
 gavatar: img/favicon.png # 浏览器地址栏小图标，可自定义更改
@@ -43,7 +43,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "你的名字" # 你的名字
+      author: "周瑞进" # 你的名字
       header-img: "devops/img/green.jpg" # We don't want posts without a header image, that whould mean white on white
 
 # Comments 
