@@ -103,7 +103,23 @@
 <!-- Custom Theme JavaScript -->
 <script src="{{ "/devops/js/clean-blog.min.js " }}"></script>
 
+<script src="{{ "/devops/js/fancybox/lib/jquery-1.10.1.min.js" }}"></script>
+<script type="text/javascript" src="/devops/js/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+<script>
+    // 给图片添加链接
+    $(document).ready(function() {
+        $("p img").each(function() {
+            var strA = "<a id='yourid' href='" + this.src + "'></a>";
+            $(this).wrapAll(strA);
+        });
+    });
 
+    // fancybox
+    $("#yourid").fancybox({
+                              openEffect    : 'elastic',
+                              closeEffect   : 'elastic',
+                          });
+</script>
 
 <!-- Highlight.js -->
 <!-- <script>
