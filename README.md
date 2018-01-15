@@ -6,3 +6,4 @@
 
 
 
+Insert img/blue.jpg
