@@ -75,6 +75,7 @@ hr.small {
   }
 }
 .post-container a {
+  display: block;
   color: #2B4180;
 }
 .post-container a:hover,
