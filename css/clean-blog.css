@@ -126,7 +126,7 @@ hr.small {
 }
 @media only screen and (min-width: 768px) {
   .navbar-custom {
-    background: transparent;
+    /*background: transparent;*/
     border-bottom: 1px solid transparent;
   }
   .navbar-custom body {
@@ -141,7 +141,7 @@ hr.small {
     color: rgba(255, 255, 255, 0.8);
   }
   .navbar-custom .nav li a {
-    color: white;
+    color: #555;
     padding: 20px;
   }
   .navbar-custom .nav li a:hover,
