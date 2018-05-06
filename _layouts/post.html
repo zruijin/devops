@@ -5,7 +5,7 @@ layout: default
 <!-- Post Header -->
  <style type="text/css">
     header.intro-header{
-        background-color:#1f9660;
+        /*background-color:#1f9660;*/
         /* background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}') */
     }
 </style> 
@@ -16,7 +16,7 @@ layout: default
                 <div class="post-heading">
                     <div class="Tags">
                         {% for tag in page.tags %}
-                        <a class="tag" href="/Tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
+                            <a class="tag" href="/Tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
                         {% endfor %}
                     </div>
                     <h1>{{ page.title }}</h1>
