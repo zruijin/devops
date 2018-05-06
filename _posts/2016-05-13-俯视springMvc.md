@@ -8,10 +8,11 @@ author: 周瑞进
 ---
 
 
-###认识SpringMvc
+### 认识SpringMvc
    作为web的开发人员，你是否知道自己写的web代码本质是什么，为什么我们开发的java应用能在tomcat上应用(或其它java服务器)。因为我们的代码是根据servlet规范来开发的，它制定了java中处理请求的标准。继承了servlet我们需要实现它的几个方法，常见的就是init、service、destroy等，而一个tomcat服务它是有很多层次结构的，但它的每一层基本都实现了init等方法，当我们的应用部署到tomcat里面时，tomcat的顶层容器就逐一的调用下一层的init方法来触发子容器，到了最后一层就能触发到了我们的servlet程序，所以我们的应用就能够被访问了。
 SpringMvc是一个很成熟并被广泛应用的开发框架，其实它的本质也是servlet，只是它帮我们封装好了，让我们可以根据自己的业务更灵活的开发，而不用生硬的遵守servlet的规范。
-####1、servlet
+
+#### 1、servlet
 servlet它是一套规范，所以它主要的工作就是定义一些接口，每一个接口解决不同的逻辑功能，但是具体的实现要取决于实现他的人。
 servlet3.1.0中servlet的源码如下：
 ```
@@ -27,6 +28,7 @@ public interface Servlet {
     void destroy();
 }
 ```
+
 init方法会在容器(tomcat)启动时被调用，但是我们一个应用有非常多的servlet，所以当然不是每个servlet的init都会在启动时被调用，我们在web.xml配置servlet时会看到一个(load-on-start)的设置。
 
 1. load-on-startup元素标记容器是否在启动的时候就加载这个servlet(实例化并调用其init()方法)。
@@ -52,15 +54,15 @@ public abstract class GenericServlet implements Servlet, ServletConfig, Serializ
   - 提供了无参的init()方法
   - 提供了log方法
 
-####2、tomcat
+#### 2、tomcat
    Tomcat中最顶层的容器是server，它代表整个服务器，server中至少包含一个service，用于提供具体的服务。service主要包含两部分：connector和container。connect中主要处理链接相关的事情，并提供socket与request、response的转换。container用于封装和管理servlet，以及具体处理request的请求。
 ![tomcat服务器结构（图片来自互联网）](http://img.blog.csdn.net/20160512222519535)
       
    server中提供了init和start方法，当容器启动后他们分别循环调用了每个init方法和start方法来启动说有service，service中又调用了子容器的init和start方法。以此递推进去就能调到servlet中的init方法了。
 
-###环境搭建
+### 环境搭建
 开发换件用IDEA，并使用maven架构。(maven如果不清楚可以自己额外去了解)
-####新建工程
+#### 新建工程
 File --》 new Module --》 Maven  (注：Idea中的module就是项目，等同于eclipse的project)
 ![这里写图片描述](http://img.blog.csdn.net/20160512224425887)
 
@@ -68,7 +70,7 @@ File --》 new Module --》 Maven  (注：Idea中的module就是项目，等同�
 ![工程结构](http://img.blog.csdn.net/20160512224952482)
 
 
-####配置环境
+#### 配置环境
  1.首先要在pom.xml中加入springmvc 和 servlet的依赖
 ```
  <dependency>
@@ -137,7 +139,7 @@ contextConfigLocation指定了springmvc配置文件的具体位置，如果没�
 毫无疑问第一种的配置是比较简单的，第二种要一个个servlet去定义，而第二种是根据整个逻辑功能引入的，像mvc:annotation-driven，这个用来注册组件的功能里就注册了好几个servlet。
 有关Schema-based XML的概念，可以参考Spring官方的reference： 
 [Appendix C. XML Schema-based configuration ](http://docs.spring.io/spring/docs/3.1.0.RELEASE/reference/html/xsd-config.html+%20+%E2%80%9CAppendix%20C.%20XML%20Schema-based%20configuration%20%E2%80%9D)
-###组件介绍
+### 组件介绍
 ![srpingmvc继承结构图](http://img.blog.csdn.net/20160512235329776)
 
 从上图我们可以看到springmv组要的结构是HttpServletBean、FrameworkServlet、DispatcherServlet，其它的是上面讲的java servlet api中的结构。
@@ -171,24 +173,24 @@ contextConfigLocation指定了springmvc配置文件的具体位置，如果没�
 
 ```
 
-####1. HanderMapping
+#### 1. HanderMapping
 根据request找到相应的处理器hander 和 Interceptors
 
-####2. HandlerAdapter
+#### 2. HandlerAdapter
 handler是具体处理事情的，HandlerAdapter就是使用handler来完成这件事的。adapter是适配器的意思，可能到adapter的请求各种各样，但他们要完成的都是同一个handler这件事。
-####3. HandlerExceptionResolver
+#### 3. HandlerExceptionResolver
 只用于对请求做处理过程中产生的异常，而渲染环节产生的异常不归它管。
-####4. ViewResolver
+#### 4. ViewResolver
 用来将String类型的视图名和locale（国际化用的有默认值）解析为view类型的视图。
-####5. RequestToViewNameTranslator
+#### 5. RequestToViewNameTranslator
 ViewResolver是根据viewname查找view，当viewname没有的话，就要从request中获取了。
-####6. LocaleResolver
+#### 6. LocaleResolver
 用于从request中解析出locale，提供给ViewResolver作为参数用。
-####7. ThemeResolver
+#### 7. ThemeResolver
 解析主体的。
-####8. MultipartResolver
+#### 8. MultipartResolver
 用于处理上传请求。
-####9. FlashMapManager
+#### 9. FlashMapManager
 主要用于redirect中传递参数的
 
 ###总结（处理流程）
