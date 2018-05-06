@@ -5,7 +5,7 @@ layout: default
 <!-- Post Header -->
  <style type="text/css">
     header.intro-header{
-        background-color:#597494;
+        background-color:#7ccebb;
         /* background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}') */
     }
 </style> 
@@ -13,7 +13,7 @@ layout: default
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading" style="height: 300px;">
+                <div class="post-heading" style="height: 300px;color: #fff">
                     <div class="Tags">
                         {% for tag in page.tags %}
                             <a class="tag" href="/Tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
@@ -24,6 +24,9 @@ layout: default
                     <h2 class="subheading">{{ page.subtitle }}</h2>
                     {% endif %}
                     <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
+                    <div class="Tags" style:"float:right"="" style="text-align:  right;">
+                      zhruji@gmail.com
+                    </div>
                 </div>
             </div>
         </div>
