@@ -103,6 +103,7 @@ File --》 new Module --》 Maven  (注：Idea中的module就是项目，等同�
         <servlet-name>springmvc</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
 ```
 contextConfigLocation指定了springmvc配置文件的具体位置，如果没有指定就默认使用WEB-INFO/[ServletName]-servlet.xml文件。
 3.创建SpringMvc的配置文件
@@ -154,6 +155,7 @@ contextConfigLocation指定了springmvc配置文件的具体位置，如果没�
       - 将webApplicationContext设置到ServletContext中
  - DispatcherServlet
     上面的onRefresh方法是DispatcherServlet的入口方法。onRefresh中简单调用了initStrategies,在initStrategies中调用了9个初始化方法：
+
 ```
     protected void onRefresh(ApplicationContext context) {
         this.initStrategies(context);
@@ -193,7 +195,7 @@ ViewResolver是根据viewname查找view，当viewname没有的话，就要从req
 #### 9. FlashMapManager
 主要用于redirect中传递参数的
 
-###总结（处理流程）
+### 总结（处理流程）
 1. 请求发送到服务器，服务器分配一个socket线程跟它链接，接着创建出request和response,接着交给对应的servlert处理。
 2. servlet中的请求首先会被httpservlet处理，将servletrequest和servletresponse转换为httpservletrequest和httpservletresponse，然后调用service方法。
 3. 接着请求就来到了springmvc,首先到达的是FrameworkServlet,做了一些初始化动作后讲请求交给DispatcherServlet
