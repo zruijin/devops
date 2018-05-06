@@ -6,6 +6,14 @@ description: "git和gitlab的使用教程 什么是devops"  # 一句话描述你
 baseurl: ""
 url: "https://zruijin.github.io/devops/"  # 此处填写你的博客地址 
 
+# Site settings
+title: about # 你的博客名字，可以定义修订
+header-img: "devops/img/green.jpg"
+tagline: "cn"  
+description: "git和gitlab的使用教程 什么是devops"  # 一句话描述你的博客
+baseurl: ""
+url: "https://zruijin.github.io/devops/"  # 此处填写你的博客地址 
+
 # About/contact
 owner: 
   name: "zhourj" # 填写作者信息：名字
