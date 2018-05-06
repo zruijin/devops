@@ -133,7 +133,7 @@ hr.small {
     font-size: 20px;
   }
   .navbar-custom .navbar-brand {
-    color: white;
+    /*color: white;*/
     padding: 20px;
   }
   .navbar-custom .navbar-brand:hover,
@@ -146,7 +146,7 @@ hr.small {
   }
   .navbar-custom .nav li a:hover,
   .navbar-custom .nav li a:focus {
-    color: rgba(255, 255, 255, 0.8);
+    /*color: rgba(255, 255, 255, 0.8);*/
   }
 }
 @media only screen and (min-width: 1170px) {

@@ -1,18 +1,11 @@
 # Site settings
 title: devops # 你的博客名字，可以定义修订
-header-img: "devops/img/green.jpg"
+header-img: "http://p7wkgfn13.bkt.clouddn.com/banner1.jpg"
 tagline: "cn"  
 description: "git和gitlab的使用教程 什么是devops"  # 一句话描述你的博客
 baseurl: ""
 url: "https://zruijin.github.io/devops/"  # 此处填写你的博客地址 
 
-# Site settings
-title: about # 你的博客名字，可以定义修订
-header-img: "devops/img/green.jpg"
-tagline: "cn"  
-description: "git和gitlab的使用教程 什么是devops"  # 一句话描述你的博客
-baseurl: ""
-url: "https://zruijin.github.io/devops/"  # 此处填写你的博客地址 
 
 # About/contact
 owner: 
@@ -52,7 +45,7 @@ defaults:
     values:
       layout: "post"
       author: "周瑞进" # 你的名字
-      header-img: "devops/img/green.jpg" # We don't want posts without a header image, that whould mean white on white
+      header-img: "http://p7wkgfn13.bkt.clouddn.com/banner1.jpg" # We don't want posts without a header image, that whould mean white on white
 
 # Comments 
 comments :
