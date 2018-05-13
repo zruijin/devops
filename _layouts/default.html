@@ -8,7 +8,6 @@
 
 
 <body ontouchstart="">
-    <img src="http://p7wkgfn13.bkt.clouddn.com/person/rj/head-string.png" style="display: hidden"/>
     {% include nav.html %}
 
     {{ content }}
@@ -16,5 +15,17 @@
     {% include footer.html %}
 
 </body>
+
+
+$(function{
+    if(navigator.userAgent.match(/MicroMessenger/i)){
+        var weixinShareLogo = 'http://p7wkgfn13.bkt.clouddn.com/person/rj/head-string.png';
+        $('body').prepend('
+        <div style=" overflow:hidden; width:0px; height:0; margin:0 auto; position:absolute; top:-800px;">
+            <img src="'+ weixinShareLogo +'">
+        </div>');
+        }
+    }
+);
 
 </html>
